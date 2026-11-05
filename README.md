@@ -22,15 +22,15 @@
 
 ---
 
-## ⚡ Filosofía Anti-Bloat & Local-First
+##  Filosofía Anti-Bloat & Local-First
 
 Las aplicaciones modernas de productividad y estudio sufren de una epidemia silenciosa: **bloatware, sobrecarga de memoria RAM y dependencia permanente de servidores remotos**. Tiempos de carga interminables, spinners bloqueantes y suscripciones forzadas para guardar simples notas de texto.
 
 **REMEMBER** fue diseñada desde los cimientos como una respuesta radical:
 
-- 🏎️ **Cero Latencia de Red:** La base de datos SQLite vive en tu propio disco SSD, operando en modo *Write-Ahead Logging* (WAL). Cada consulta y escritura se ejecuta en microsegundos, sin importar si estás en un avión sin WiFi o en el campus universitario.
-- 🪶 **Consumo Mínimo de Recursos:** Gracias a la arquitectura nativa de **Tauri v2 + Rust**, REMEMBER consume entre **35 MB y 60 MB de memoria RAM**, frente a los 600 MB a 1.5 GB de las alternativas basadas en Electron.
-- 🔒 **100% Privado y Offline:** Tus apuntes, exámenes, proyectos y tarjetas de repaso nunca abandonan tu máquina. No existen rastreadores publicitarios ni telemetría invasiva.
+-  **Cero Latencia de Red:** La base de datos SQLite vive en tu propio disco SSD, operando en modo *Write-Ahead Logging* (WAL). Cada consulta y escritura se ejecuta en microsegundos, sin importar si estás en un avión sin WiFi o en el campus universitario.
+-  **Consumo Mínimo de Recursos:** Gracias a la arquitectura nativa de **Tauri v2 + Rust**, REMEMBER consume entre **35 MB y 60 MB de memoria RAM**, frente a los 600 MB a 1.5 GB de las alternativas basadas en Electron.
+-  **100% Privado y Offline:** Tus apuntes, exámenes, proyectos y tarjetas de repaso nunca abandonan tu máquina. No existen rastreadores publicitarios ni telemetría invasiva.
 - ⌨️ **Diseñada para el Flujo Continuo:** Navegación ultrarrápida mediante teclado y Command Palette global (`⌘K` / `Ctrl+K`).
 
 ---
