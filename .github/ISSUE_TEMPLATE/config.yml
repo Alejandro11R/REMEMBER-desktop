@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "🔒 Reportar Vulnerabilidad de Seguridad (Privado)"
+    url: "mailto:hola@isremember.com?subject=[SECURITY]%20Reporte%20de%20Seguridad%20REMEMBER"
+    about: "Por favor NO abras un issue público para problemas de seguridad. Escríbenos a hola@isremember.com."
+  - name: "🌐 Sitio Web Oficial y Lista de Espera Beta"
+    url: "https://www.isremember.com"
+    about: "Visita el portal oficial de REMEMBER para información general y descargas."

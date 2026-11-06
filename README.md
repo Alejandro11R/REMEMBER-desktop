@@ -4,118 +4,176 @@
 
   # REMEMBER
 
-  **Estación de trabajo y estudio personal Local-First ultrarrápida**  
-  *Construida con Tauri v2, Rust, SQLite y React.*
+  **Estación de trabajo y estudio personal Local-First con sincronización opcional**  
+  *Construida con Tauri v2, Rust, SQLite (WAL + FTS5) y React.*
 
   [![Sitio Web](https://img.shields.io/badge/Web-isremember.com-00DC82?style=for-the-badge&logo=googlechrome&logoColor=white)](https://www.isremember.com)
   [![Versión Beta](https://img.shields.io/badge/Versi%C3%B3n-v0.1.3--Beta-8B5CF6?style=for-the-badge)](https://www.isremember.com#waitlist)
   [![Tauri](https://img.shields.io/badge/Tauri-v2.0-FFC131?style=for-the-badge&logo=tauri&logoColor=black)](https://tauri.app)
   [![Rust](https://img.shields.io/badge/Rust-2024-DEA584?style=for-the-badge&logo=rust&logoColor=black)](https://www.rust-lang.org)
-  [![SQLite](https://img.shields.io/badge/SQLite-WAL%20Mode-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://sqlite.org)
-  [![Licencia](https://img.shields.io/badge/Licencia-Proprietary%20%2F%20Public%20Satellite-gray?style=for-the-badge)](https://www.isremember.com/terms)
+  [![SQLite](https://img.shields.io/badge/SQLite-WAL%20%2B%20FTS5-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://sqlite.org)
+  [![Licencia](https://img.shields.io/badge/Licencia-Proprietary-gray?style=for-the-badge)](./LICENSE)
 
   <br />
 
-  [**Sitio Web Oficial**](https://www.isremember.com) • [**Solicitar Acceso a la Beta**](https://www.isremember.com#waitlist) • [**Reportar un Error (Issues)**](https://github.com/Alejandro11R/REMEMBER-desktop/issues) • [**Política de Privacidad**](https://www.isremember.com/privacy)
+  [**Sitio Web Oficial**](https://www.isremember.com) • [**Solicitar Acceso a la Beta**](https://www.isremember.com#waitlist) • [**Reportar un Error (Issues)**](https://github.com/Alejandro11R/REMEMBER-desktop/issues) • [**Política de Seguridad**](./SECURITY.md) • [**Privacidad**](https://www.isremember.com/privacy)
 
 </div>
 
 ---
 
-##  Filosofía Anti-Bloat & Local-First
+## Filosofía Anti-Bloat & Arquitectura Local-First
 
-Las aplicaciones modernas de productividad y estudio sufren de una epidemia silenciosa: **bloatware, sobrecarga de memoria RAM y dependencia permanente de servidores remotos**. Tiempos de carga interminables, spinners bloqueantes y suscripciones forzadas para guardar simples notas de texto.
+Las aplicaciones modernas de productividad académica suelen sufrir de **sobrecarga de memoria RAM y dependencia obligatoria de servidores remotos**, provocando tiempos de carga lentos y bloqueos cuando falla la conexión a internet.
 
-**REMEMBER** fue diseñada desde los cimientos como una respuesta radical:
+**REMEMBER** fue diseñada desde los cimientos bajo una arquitectura **Local-First en Escritorio** e **Híbrida en Web**:
 
--  **Cero Latencia de Red:** La base de datos SQLite vive en tu propio disco SSD, operando en modo *Write-Ahead Logging* (WAL). Cada consulta y escritura se ejecuta en microsegundos, sin importar si estás en un avión sin WiFi o en el campus universitario.
--  **Consumo Mínimo de Recursos:** Gracias a la arquitectura nativa de **Tauri v2 + Rust**, REMEMBER consume entre **35 MB y 60 MB de memoria RAM**, frente a los 600 MB a 1.5 GB de las alternativas basadas en Electron.
--  **100% Privado y Offline:** Tus apuntes, exámenes, proyectos y tarjetas de repaso nunca abandonan tu máquina. No existen rastreadores publicitarios ni telemetría invasiva.
-- ⌨️ **Diseñada para el Flujo Continuo:** Navegación ultrarrápida mediante teclado y Command Palette global (`⌘K` / `Ctrl+K`).
+- **Velocidad Local sin Latencia de Red:** En la aplicación de escritorio, la base de datos SQLite reside directamente en tu disco operando en modo *Write-Ahead Logging* (WAL) con índices de texto completo **FTS5**. Las consultas, filtros y escrituras locales responden en fracciones de milisegundo, incluso sin conexión WiFi.
+- **Consumo Reducido de Recursos:** Gracias al motor nativo en **Tauri v2 + Rust** y el uso del WebView nativo del sistema operativo, REMEMBER mantiene una huella base de memoria ligera (~35 MB – 60 MB en el proceso nativo, más el WebView según la carga multimedia), muy por debajo de los 600 MB a 1.5 GB habituales en aplicaciones empaquetadas con Electron.
+- **Privacidad Controlada (Modo Invitado Offline + Nube Opcional):**
+  - **Modo Invitado (100% Local y Offline):** Puedes usar REMEMBER sin crear cuenta ni conectarte a internet; tus apuntes, tareas, materias y tarjetas nunca salen de tu equipo.
+  - **Sincronización en la Nube Opcional:** Si decides iniciar sesión con tu cuenta, puedes respaldar y sincronizar tus datos entre equipos (Escritorio y Web PWA) mediante migración atómica desde el Modo Invitado. Sin rastreadores publicitarios ni telemetría de terceros.
+- **Flujo Continuo por Teclado:** Navegación rápida mediante atajos (`Alt+1` a `Alt+6`) y **Command Palette global** (`⌘K` / `Ctrl+K`).
 
 ---
 
-## 📸 Capturas de Pantalla
+## 📸 Recorrido Visual por los 9 Módulos
 
 <div align="center">
-  <img src="assets/screenshots/notes.png" alt="Editor de Notas Markdown de REMEMBER" width="850" />
-  <p><em>Editor Markdown híbrido con conversión directa de apuntes a tareas accionables.</em></p>
+  <img src="assets/screenshots/tasks.png" alt="Gestor de Tareas y Entregas en REMEMBER" width="850" />
+  <p><em>1. Gestor de Tareas con vistas de Lista, Por Materia, Por Vencimiento, Tablero e Historial de entregas.</em></p>
 </div>
 
 <br />
 
 <div align="center">
-  <img src="assets/screenshots/flashcards.png" alt="Repaso Espaciado con Algoritmo SM-2 en REMEMBER" width="850" />
-  <p><em>Módulo de Flashcards con algoritmo científico de repetición espaciada SuperMemo SM-2.</em></p>
+  <img src="assets/screenshots/nueva_tarea.png" alt="Creación Rápida de Tareas y Rutas Académicas" width="850" />
+  <p><em>2. Captura rápida de entregas con prioridad, fecha límite y plantillas de Ruta Académica (checklists).</em></p>
+</div>
+
+<br />
+
+<div align="center">
+  <img src="assets/screenshots/notes.png" alt="Notas en Markdown por Materia" width="850" />
+  <p><em>3. Apuntes en Markdown vinculados a tus materias con conversión directa en tareas accionables.</em></p>
+</div>
+
+<br />
+
+<div align="center">
+  <img src="assets/screenshots/flashcards.png" alt="Repaso Espaciado con Variante SM-2 en REMEMBER" width="850" />
+  <p><em>4. Tarjetas de estudio (Flashcards) con variante de 3 niveles del algoritmo SuperMemo SM-2.</em></p>
 </div>
 
 <br />
 
 <div align="center">
   <img src="assets/screenshots/classroom.png" alt="Sincronización con Google Classroom en REMEMBER" width="850" />
-  <p><em>Integración directa y segura con Google Classroom: cursos, tareas y fechas de entrega en un solo panel.</em></p>
+  <p><em>5. Importación de cursos, entregas y anuncios desde Google Classroom (OAuth 2.0 PKCE de solo lectura).</em></p>
+</div>
+
+<br />
+
+<div align="center">
+  <img src="assets/screenshots/projects.png" alt="Gestión de Materias y Proyectos" width="850" />
+  <p><em>6. Organización por Materias (Proyectos) con progreso de entregas, notas y tarjetas asociadas.</em></p>
+</div>
+
+<br />
+
+<div align="center">
+  <img src="assets/screenshots/calendar.png" alt="Calendario Mensual de Entregas Académicas" width="850" />
+  <p><em>7. Calendario mensual de entregas para visualizar vencimientos críticos del semestre.</em></p>
+</div>
+
+<br />
+
+<div align="center">
+  <img src="assets/screenshots/pomodoro.png" alt="Temporizador Pomodoro y Estadísticas de Enfoque" width="850" />
+  <p><em>8. Temporizador Pomodoro con seguimiento de rachas diarias, horas acumuladas, sonidos ambientales y modo mini-reproductor.</em></p>
+</div>
+
+<br />
+
+<div align="center">
+  <img src="assets/screenshots/command_palette.png" alt="Búsqueda Global FTS5 y Command Palette" width="850" />
+  <p><em>9. Búsqueda global instantánea (Ctrl+K / ⌘K) impulsada por SQLite FTS5 sobre tareas, notas y materias.</em></p>
 </div>
 
 ---
 
-## 🧠 Características Principales
+## 🧠 Características Principales y Especificaciones Técnicas
 
-### 1. 📝 Notas Markdown & Tareas Unificadas
-Olvídate de copiar y pegar pendientes de tus notas a otra app de to-do. En REMEMBER, cualquier elemento o apunte se transforma con un atajo en una tarea con fecha de vencimiento que viaja automáticamente a tu tablero de hoy.
+### 1. ✅ Tareas, Rutas Académicas y Alertas
+Organiza tus entregas por estado, prioridad (`LOW`, `MED`, `HIGH`) y fecha de vencimiento. Alterna entre las vistas **Lista**, **Por Materia**, **Por Vencimiento**, **Tablero Kanban** e **Historial**, o aplica plantillas de **Ruta Académica** con subtareas predefinidas para parciales, ensayos y laboratorios.
 
-### 2. 📚 Algoritmo de Repaso Espaciado SM-2
-Aprende y retén información de manera eficiente. Las tarjetas de estudio utilizan la variante optimizada del algoritmo **SuperMemo SM-2**, calculando los intervalos ideales de repetición (factor de facilidad $EF$, intervalos y calidad de respuesta) para maximizar la memoria a largo plazo antes de tus exámenes o entregas.
+### 2. 📝 Notas en Markdown Vinculadas a Materias
+Redacta apuntes estructurados en Markdown clasificados por materia/proyecto, y convierte cualquier apunte o pendiente en una tarea con fecha de entrega sin salir de tu flujo de estudio.
 
-### 3. 🎓 Sincronización Oficial con Google Classroom
-Conexión directa vía Google OAuth con permisos estrictamente limitados de lectura. Descarga automáticamente tus materias, tareas pendientes y materiales de clase directamente a tu almacenamiento local, garantizando que nunca pierdas una fecha límite.
+### 3. 📚 Repetición Espaciada (Variante SuperMemo SM-2 de 3 Niveles)
+Las tarjetas de estudio implementan una **variante adaptada de 3 niveles del algoritmo SuperMemo SM-2** diseñada para agilizar el repaso activo:
+- **Calificaciones de respuesta:** *Difícil* (reinicia repeticiones a 0 e intervalo a 1 día), *Bien* y *Fácil*.
+- **Progresión de intervalos:** 1.er repaso exitoso $\rightarrow$ **1 día**; 2.º repaso exitoso $\rightarrow$ **3 días**; repasos siguientes $\rightarrow \text{round}(\text{intervalo} \times EF)$ (con bonificación adicional al calificar *Fácil*).
+- **Factor de Facilidad ($EF$):** Inicia en `2.50` y se ajusta dinámicamente tras cada sesión respetando un piso mínimo estricto de **`1.30`**.
 
-### 4. ⏱️ Temporizador Pomodoro & Paisajes Sonoros
-Entrena tu capacidad de hiperfoco con ciclos de trabajo profundo personalizables y sonidos ambientales relajantes (lluvia, ruido blanco, cafetería) ejecutados nativamente sin consumo innecesario de CPU.
+### 4. 🎓 Integración con Google Classroom (Solo Lectura)
+Conecta tu cuenta institucional o personal mediante **OAuth 2.0 con PKCE** utilizando exclusivamente alcances (*scopes*) de solo lectura:
+- `https://www.googleapis.com/auth/classroom.courses.readonly`
+- `https://www.googleapis.com/auth/classroom.coursework.me.readonly`
+- `https://www.googleapis.com/auth/classroom.announcements.readonly`
 
-### 5. 🗂️ Calendario & Gestor de Proyectos
-Visualiza tu carga semanal y mensual. Planifica bloques de tiempo (time blocking), vincula proyectos y visualiza los hitos académicos y laborales en una interfaz limpia con temas oscuros de alto contraste.
+Importa de forma idempotente tus cursos activos como materias, las entregas con fecha límite como tareas y los anuncios recientes (últimos 6 meses) como notas de referencia.
+
+### 5. 🗂️ Materias (Proyectos) y Calendario Mensual
+Agrupa tus tareas, apuntes y mazos de tarjetas bajo cada **Materia** con identificación por color, y consulta la distribución mensual de tus entregas en el **Calendario**.
+
+### 6. ⏱️ Pomodoro, Rachas de Estudio y Paisajes Sonoros
+Registra sesiones de concentración vinculadas a tus tareas, contabiliza tu racha de días válidos en SQLite, reproduce sonidos ambientales integrados y activa el modo compacto durante tus sesiones de estudio.
+
+### 7. 🔍 Command Palette & Búsqueda Global FTS5 (`Ctrl+K`)
+Encuentra al instante cualquier nota, tarea o materia mediante el índice de búsqueda de texto completo **SQLite FTS5** y ejecuta acciones rápidas desde el teclado.
 
 ---
 
 ## 💻 Plataformas Soportadas
 
-| Sistema Operativo | Formato del Paquete | Estado |
+| Plataforma | Formato / Acceso | Estado |
 | :--- | :--- | :--- |
-| **Windows 10 / 11** | Instalador x64 (`.msi` / `.exe`) | 🟢 Beta Disponible |
-| **Linux** | Paquetes nativos (`.deb` / `.AppImage`) | 🟢 Beta Disponible |
+| **Windows 10 / 11** | Instalador nativo x64 (`.exe` NSIS / `.msi`) | 🟢 Beta Disponible (`v0.1.3`) |
+| **Linux** | Paquetes nativos x64 (`.deb` / `.AppImage`) | 🟢 Beta Disponible (`v0.1.3`) |
+| **Web / PWA** | Aplicación Web Progresiva sincronizada | 🟢 Beta Disponible |
 | **macOS** | Universal (`.dmg` Apple Silicon & Intel) | 🟡 En Preparación |
 
-> 📥 **¿Cómo probar la versión preliminar?**  
-> Regístrate con tu correo electrónico en [isremember.com](https://www.isremember.com#waitlist) para recibir el enlace de descarga e instrucciones de instalación.
+> 📥 **¿Cómo probar la versión Beta?**  
+> Solicita acceso en [isremember.com](https://www.isremember.com#waitlist) para descargar el instalador correspondiente a tu sistema operativo.
 
 ---
 
 ## 🛠️ Stack Tecnológico
 
-- **Core & Backend Nativo:** [Rust](https://www.rust-lang.org/) + [Tauri v2](https://tauri.app/)
-- **Almacenamiento Local:** [SQLite](https://sqlite.org/) con modo WAL (Write-Ahead Logging)
-- **Frontend & UI:** [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/)
-- **Protocolos de Integración:** Google Classroom REST API v1 (OAuth 2.0 PKCE)
-- **Algoritmo de Aprendizaje:** SuperMemo SM-2 Spaced Repetition Engine
+- **Core & Backend Nativo (Desktop):** [Rust](https://www.rust-lang.org/) + [Tauri v2](https://tauri.app/)
+- **Motor de Base de Datos Local:** [SQLite](https://sqlite.org/) (Modo WAL + Índices FTS5)
+- **Sincronización Opcional y Auth:** [Supabase](https://supabase.com/) (PostgreSQL con RLS + OAuth 2.0 PKCE)
+- **Frontend & UI:** [React 19](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS v4](https://tailwindcss.com/), [TanStack Query](https://tanstack.com/query)
+- **Integración Académica:** Google Classroom REST API v1 (Solo lectura)
 
 ---
 
 ## 🛡️ Propósito de este Repositorio Satélite
 
-Este repositorio público actúa como el **canal comunitario oficial** de **REMEMBER**:
+Este repositorio público funciona como el **portal comunitario y de documentación pública** de **REMEMBER Desktop**:
 
-1. **Rastreador de Problemas (Bug Tracker):** Si experimentas un fallo o comportamiento inesperado, puedes abrir un [Issue en GitHub](https://github.com/Alejandro11R/REMEMBER-desktop/issues).
-2. **Solicitud de Funciones (Feature Requests):** Propón nuevas ideas y mejoras que te gustaría ver en las próximas versiones.
-3. **Registro de Cambios (Changelog) & Releases:** Consulta las notas de actualización de cada versión Beta.
-4. **Seguridad y Auditoría:** Consulta nuestras políticas de reporte responsable y manejo de datos.
+1. **Rastreador de Errores (Bug Tracker):** Reporta cualquier fallo visual o funcional abriendo un [Issue en GitHub](https://github.com/Alejandro11R/REMEMBER-desktop/issues). Revisa nuestra [Guía de Contribución](./CONTRIBUTING.md).
+2. **Sugerencias y Mejoras (Feature Requests):** Propón nuevas ideas para las próximas versiones de la Beta.
+3. **Reporte Responsable de Seguridad:** Consulta nuestra [Política de Seguridad (`SECURITY.md`)](./SECURITY.md) para reportar vulnerabilidades de forma privada a través de `hola@isremember.com`.
 
-> 🔒 *Nota:* El código fuente del motor de la aplicación se mantiene en un repositorio privado propiedad de los desarrolladores. Este repositorio satélite no contiene el código de compilación del núcleo propietario, garantizando la seguridad del software y permitiendo al mismo tiempo la colaboración y retroalimentación transparente de la comunidad.
+> 🔒 *Nota sobre el código fuente:* El código fuente del motor y la aplicación reside en un repositorio privado donde se ejecutan las pruebas automatizadas (`cargo test`, `biome check`) y los flujos de integración continua. Consulta el archivo [`LICENSE`](./LICENSE) para más información sobre los derechos de uso.
 
 ---
 
 ## 👥 Equipo & Creadores
 
-Desarrollado con pasión por:
+Desarrollado por:
 
 - **Hugo Alejandro Rodriguez** ([@Alejandro11R](https://github.com/Alejandro11R)) — Fundador & Arquitectura Core
 - **TheBrake** ([@TheBrake](https://github.com/TheBrake)) — Co-Fundador & Diseño de Producto
@@ -124,12 +182,13 @@ Desarrollado con pasión por:
 
 ## 📬 Contacto & Enlaces
 
-- **Web:** [https://www.isremember.com](https://www.isremember.com)
-- **Email:** [hola@isremember.com](mailto:hola@isremember.com)
-- **Privacidad:** [https://www.isremember.com/privacy](https://www.isremember.com/privacy)
-- **Términos:** [https://www.isremember.com/terms](https://www.isremember.com/terms)
+- **Sitio Web:** [https://www.isremember.com](https://www.isremember.com)
+- **Soporte y Seguridad:** [hola@isremember.com](mailto:hola@isremember.com)
+- **Política de Seguridad:** [`SECURITY.md`](./SECURITY.md)
+- **Política de Privacidad:** [https://www.isremember.com/privacy](https://www.isremember.com/privacy)
+- **Términos de Uso:** [https://www.isremember.com/terms](https://www.isremember.com/terms)
 
 <div align="center">
   <br />
-  <sub>Hecho para quienes valoran la velocidad, la concentración y la privacidad de su información.</sub>
+  <sub>Diseñado para estudiantes y profesionales que valoran la velocidad local, el aprendizaje activo y el control sobre su información.</sub>
 </div>

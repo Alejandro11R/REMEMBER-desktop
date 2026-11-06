@@ -1,6 +1,37 @@
+# Sistema Operativo y Editores
 .DS_Store
 Thumbs.db
 *.log
-node_modules/
 .vscode/
 .idea/
+
+# Dependencias y Compilación (Node / Vite / React)
+node_modules/
+dist/
+build/
+
+# Compilación Rust / Tauri
+target/
+src-tauri/target/
+
+# Bases de Datos Locales (SQLite + WAL)
+*.db
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+
+# Secretos, Variables de Entorno y Firmas
+.env
+.env.*
+*.pem
+*.key
+*.sig
+
+# Instaladores y Binarios Empaquetados
+*.msi
+*.exe
+*.dmg
+*.AppImage
+*.deb
+*.rpm
