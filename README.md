@@ -90,7 +90,7 @@ Las aplicaciones modernas de productividad académica suelen sufrir de **sobreca
 
 <div align="center">
   <img src="assets/screenshots/pomodoro.png" alt="Temporizador Pomodoro y Estadísticas de Enfoque" width="850" />
-  <p><em>8. Temporizador Pomodoro con seguimiento de rachas diarias, horas acumuladas, sonidos ambientales y modo mini-reproductor.</em></p>
+  <p><em>8. Temporizador Pomodoro con seguimiento de rachas diarias, horas acumuladas y modo mini-reproductor compacto.</em></p>
 </div>
 
 <br />
@@ -113,8 +113,11 @@ Redacta apuntes estructurados en Markdown clasificados por materia/proyecto, y c
 ### 3. 📚 Repetición Espaciada (Variante SuperMemo SM-2 de 3 Niveles)
 Las tarjetas de estudio implementan una **variante adaptada de 3 niveles del algoritmo SuperMemo SM-2** diseñada para agilizar el repaso activo:
 - **Calificaciones de respuesta:** *Difícil* (reinicia repeticiones a 0 e intervalo a 1 día), *Bien* y *Fácil*.
-- **Progresión de intervalos:** 1.er repaso exitoso $\rightarrow$ **1 día**; 2.º repaso exitoso $\rightarrow$ **3 días**; repasos siguientes $\rightarrow \text{round}(\text{intervalo} \times EF)$ (con bonificación adicional al calificar *Fácil*).
-- **Factor de Facilidad ($EF$):** Inicia en `2.50` y se ajusta dinámicamente tras cada sesión respetando un piso mínimo estricto de **`1.30`**.
+- **Progresión de intervalos:**
+  - *Bien (`2`)*: 1.er repaso $\rightarrow$ **1 día**; 2.º repaso $\rightarrow$ **6 días**; siguientes $\rightarrow \text{round}(\text{intervalo} \times EF)$.
+  - *Fácil (`3`)*: 1.er repaso $\rightarrow$ **2 días**; 2.º repaso $\rightarrow$ **7 días**; siguientes $\rightarrow \text{round}(\text{intervalo} \times EF \times 1.30)$.
+- **Factor de Facilidad ($EF$):** Inicia en `2.50` y se ajusta dinámicamente tras cada sesión respetando el rango **`[1.30, 3.00]`**.
+- **Criterio de Dominio:** Una tarjeta se marca como *Dominada* al alcanzar `repetitions >= 3` e `interval >= 14` días.
 
 ### 4. 🎓 Integración con Google Classroom (Solo Lectura)
 Conecta tu cuenta institucional o personal mediante **OAuth 2.0 con PKCE** utilizando exclusivamente alcances (*scopes*) de solo lectura:
@@ -122,13 +125,13 @@ Conecta tu cuenta institucional o personal mediante **OAuth 2.0 con PKCE** utili
 - `https://www.googleapis.com/auth/classroom.coursework.me.readonly`
 - `https://www.googleapis.com/auth/classroom.announcements.readonly`
 
-Importa de forma idempotente tus cursos activos como materias, las entregas con fecha límite como tareas y los anuncios recientes (últimos 6 meses) como notas de referencia.
+Importa de forma idempotente tus cursos activos como materias, las entregas de los **últimos 30 días** como tareas (archivando automáticamente en el Historial aquellas cuya fecha límite ya venció) y hasta los **últimos 5 anuncios por curso** como notas de referencia.
 
 ### 5. 🗂️ Materias (Proyectos) y Calendario Mensual
 Agrupa tus tareas, apuntes y mazos de tarjetas bajo cada **Materia** con identificación por color, y consulta la distribución mensual de tus entregas en el **Calendario**.
 
-### 6. ⏱️ Pomodoro, Rachas de Estudio y Paisajes Sonoros
-Registra sesiones de concentración vinculadas a tus tareas, contabiliza tu racha de días válidos en SQLite, reproduce sonidos ambientales integrados y activa el modo compacto durante tus sesiones de estudio.
+### 6. ⏱️ Pomodoro y Rachas de Estudio
+Registra sesiones de concentración vinculadas a tus tareas, contabiliza tu racha de días válidos en SQLite y activa el modo compacto Always-On-Top durante tus sesiones de estudio.
 
 ### 7. 🔍 Command Palette & Búsqueda Global FTS5 (`Ctrl+K`)
 Encuentra al instante cualquier nota, tarea o materia mediante el índice de búsqueda de texto completo **SQLite FTS5** y ejecuta acciones rápidas desde el teclado.
