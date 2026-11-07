@@ -16,7 +16,7 @@ En **REMEMBER**, la seguridad y la privacidad de la información académica de n
 > ⚠️ **IMPORTANTE:** Si descubres un fallo de seguridad, **NO abras un Issue público en GitHub**.
 
 Por favor envíanos un reporte privado por correo electrónico a:
-- 📧 **[hola@isremember.com](mailto:hola@isremember.com)** con el asunto `[SECURITY] Descripción breve del hallazgo`.
+- 📧 **[rememberhm.landing123@gmail.com ](mailtorememberhm.landing123@gmail.com)** con el asunto `[SECURITY] Descripción breve del hallazgo`.
 
 ### Qué incluir en tu reporte:
 1. Versión de REMEMBER y sistema operativo (Windows, Linux o Web).
