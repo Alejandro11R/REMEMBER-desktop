@@ -117,7 +117,7 @@ Las tarjetas de estudio implementan una **variante adaptada de 3 niveles del alg
   - *Bien (`2`)*: 1.er repaso $\rightarrow$ **1 día**; 2.º repaso $\rightarrow$ **6 días**; siguientes $\rightarrow \text{round}(\text{intervalo} \times EF)$.
   - *Fácil (`3`)*: 1.er repaso $\rightarrow$ **2 días**; 2.º repaso $\rightarrow$ **7 días**; siguientes $\rightarrow \text{round}(\text{intervalo} \times EF \times 1.30)$.
 - **Factor de Facilidad ($EF$):** Inicia en `2.50` y se ajusta dinámicamente tras cada sesión respetando el rango **`[1.30, 3.00]`**.
-- **Criterio de Dominio:** Una tarjeta se marca como *Dominada* al alcanzar `repetitions >= 3` e `interval >= 14` días.
+- **Criterio de Dominio:** Una tarjeta se marca como *Dominada* al alcanzar simultáneamente `repetitions >= 3`, `interval >= 21` días y `ease_factor >= 2.5`.
 
 ### 4. 🎓 Integración con Google Classroom (Solo Lectura)
 Conecta tu cuenta institucional o personal mediante **OAuth 2.0 con PKCE** utilizando exclusivamente alcances (*scopes*) de solo lectura:
@@ -125,7 +125,7 @@ Conecta tu cuenta institucional o personal mediante **OAuth 2.0 con PKCE** utili
 - `https://www.googleapis.com/auth/classroom.coursework.me.readonly`
 - `https://www.googleapis.com/auth/classroom.announcements.readonly`
 
-Importa de forma idempotente tus cursos activos como materias, las entregas de los **últimos 30 días** como tareas (archivando automáticamente en el Historial aquellas cuya fecha límite ya venció) y hasta los **últimos 5 anuncios por curso** como notas de referencia.
+Importa de forma idempotente tus cursos activos como materias, las entregas de los **últimos 30 días** como tareas pendientes (marcando con la etiqueta roja `Vencida · Tarde` aquellas cuya fecha límite ya pasó y ofreciendo archivado en lote en un clic hacia el Historial) y hasta los **últimos 5 anuncios por curso** como notas de referencia.
 
 ### 5. 🗂️ Materias (Proyectos) y Calendario Mensual
 Agrupa tus tareas, apuntes y mazos de tarjetas bajo cada **Materia** con identificación por color, y consulta la distribución mensual de tus entregas en el **Calendario**.
