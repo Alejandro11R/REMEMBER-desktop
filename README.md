@@ -187,7 +187,7 @@ Desarrollado por:
 ## 📬 Contacto & Enlaces
 
 - **Sitio Web:** [https://www.isremember.com](https://www.isremember.com)
-- **Soporte y Seguridad:** [hola@isremember.com](mailto:hola@isremember.com)
+- **Soporte y Seguridad:** [hola@isremember.com](mailto:rememberhm.landing123@gmail.com)
 - **Política de Seguridad:** [`SECURITY.md`](./SECURITY.md)
 - **Política de Privacidad:** [https://www.isremember.com/privacy](https://www.isremember.com/privacy)
 - **Términos de Uso:** [https://www.isremember.com/terms](https://www.isremember.com/terms)
