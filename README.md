@@ -138,17 +138,18 @@ Encuentra al instante cualquier nota, tarea o materia mediante el índice de bú
 
 ---
 
-## 💻 Plataformas Soportadas
+## 💻 Plataformas Soportadas & Descargas
 
-| Plataforma | Formato / Acceso | Estado |
-| :--- | :--- | :--- |
-| **Windows 10 / 11** | Instalador nativo x64 (`.exe` NSIS / `.msi`) | 🟢 Beta Disponible (`v0.1.3`) |
-| **Linux** | Paquetes nativos x64 (`.deb` / `.AppImage`) | 🟢 Beta Disponible (`v0.1.3`) |
-| **Web / PWA** | Aplicación Web Progresiva sincronizada | 🟢 Beta Disponible |
-| **macOS** | Universal (`.dmg` Apple Silicon & Intel) | 🟡 En Preparación |
+| Sistema Operativo | Formato del Paquete | Estado | Enlace de Descarga |
+| :--- | :--- | :--- | :--- |
+| **Windows 10 / 11** | Instalador x64 (`.exe`) | 🟢 Beta Disponible (`v0.1.3`) | [Descargar REMEMBER para Windows (.exe)](https://github.com/Alejandro11R/REMEMBER-desktop/releases/download/v0.1.3/REMEMBER_0.1.3_x64-setup.exe) |
+| **Windows 10 / 11** | Paquete Enterprise (`.msi`) | 🟢 Beta Disponible (`v0.1.3`) | [Descargar Paquete MSI](https://github.com/Alejandro11R/REMEMBER-desktop/releases/download/v0.1.3/REMEMBER_0.1.3_x64_en-US.msi) |
+| **Linux** | Universal (`.AppImage`) | 🟢 Beta Disponible (`v0.1.3`) | [Descargar AppImage](https://github.com/Alejandro11R/REMEMBER-desktop/releases/download/v0.1.3/REMEMBER_0.1.3_amd64.AppImage) |
+| **Linux (Debian/Ubuntu)** | Paquete Debian (`.deb`) | 🟢 Beta Disponible (`v0.1.3`) | [Descargar Paquete .deb](https://github.com/Alejandro11R/REMEMBER-desktop/releases/download/v0.1.3/REMEMBER_0.1.3_amd64.deb) |
+| **macOS** | Universal (`.dmg` Apple Silicon & Intel) | 🟡 En Preparación | *Próximamente* |
 
-> 📥 **¿Cómo probar la versión Beta?**  
-> Solicita acceso en [isremember.com](https://www.isremember.com#waitlist) para descargar el instalador correspondiente a tu sistema operativo.
+> 🌐 **¿Prefieres probar sin instalar?**  
+> Puedes usar la aplicación completa directamente en tu navegador desde [app.isremember.com](https://app.isremember.com) con guardado local instantáneo.
 
 ---
 
