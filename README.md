@@ -8,7 +8,7 @@
   *Construida con Tauri v2, Rust, SQLite (WAL + FTS5) y React.*
 
   [![Sitio Web](https://img.shields.io/badge/Web-isremember.com-00DC82?style=for-the-badge&logo=googlechrome&logoColor=white)](https://www.isremember.com)
-  [![Versión Beta](https://img.shields.io/badge/Versi%C3%B3n-v0.1.3--Beta-8B5CF6?style=for-the-badge)](https://www.isremember.com#waitlist)
+  [![Versión Beta](https://img.shields.io/badge/Versi%C3%B3n-v0.1.4--Beta-8B5CF6?style=for-the-badge)](https://www.isremember.com#waitlist)
   [![Tauri](https://img.shields.io/badge/Tauri-v2.0-FFC131?style=for-the-badge&logo=tauri&logoColor=black)](https://tauri.app)
   [![Rust](https://img.shields.io/badge/Rust-2024-DEA584?style=for-the-badge&logo=rust&logoColor=black)](https://www.rust-lang.org)
   [![SQLite](https://img.shields.io/badge/SQLite-WAL%20%2B%20FTS5-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://sqlite.org)
@@ -144,8 +144,8 @@ El acceso a los instaladores de escritorio de la Beta Oficial está centralizado
 
 | Sistema Operativo | Formato del Paquete | Estado | Obtener Instalador |
 | :--- | :--- | :--- | :--- |
-| **Windows 10 / 11** | Instalador x64 (`.exe` / `.msi`) | 🟢 Beta Disponible (`v0.1.3`) | [Registrar correo y descargar en isremember.com](https://www.isremember.com#waitlist) |
-| **Linux** | Universal (`.AppImage` / `.deb` / `.rpm`) | 🟢 Beta Disponible (`v0.1.3`) | [Registrar correo y descargar en isremember.com](https://www.isremember.com#waitlist) |
+| **Windows 10 / 11** | Instalador x64 (`.exe` / `.msi`) | 🟢 Beta Disponible (`v0.1.4`) | [Registrar correo y descargar en isremember.com](https://www.isremember.com#waitlist) |
+| **Linux** | Universal (`.AppImage` / `.deb` / `.rpm`) | 🟢 Beta Disponible (`v0.1.4`) | [Registrar correo y descargar en isremember.com](https://www.isremember.com#waitlist) |
 | **macOS** | Universal (`.dmg` Apple Silicon & Intel) | 🟡 En Preparación | [Unirse a la lista de espera](https://www.isremember.com#waitlist) |
 
 > 🌐 **¿Prefieres probar de inmediato sin instalar nada?**  
