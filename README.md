@@ -138,18 +138,18 @@ Encuentra al instante cualquier nota, tarea o materia mediante el índice de bú
 
 ---
 
-## 💻 Plataformas Soportadas & Descargas
+## 💻 Plataformas Soportadas & Acceso a la Beta
 
-| Sistema Operativo | Formato del Paquete | Estado | Enlace de Descarga |
+El acceso a los instaladores de escritorio de la Beta Oficial está centralizado en nuestro portal para coordinar la lista de espera y registrar a los primeros evaluadores:
+
+| Sistema Operativo | Formato del Paquete | Estado | Obtener Instalador |
 | :--- | :--- | :--- | :--- |
-| **Windows 10 / 11** | Instalador x64 (`.exe`) | 🟢 Beta Disponible (`v0.1.3`) | [Descargar REMEMBER para Windows (.exe)](https://github.com/Alejandro11R/REMEMBER-desktop/releases/download/v0.1.3/REMEMBER_0.1.3_x64-setup.exe) |
-| **Windows 10 / 11** | Paquete Enterprise (`.msi`) | 🟢 Beta Disponible (`v0.1.3`) | [Descargar Paquete MSI](https://github.com/Alejandro11R/REMEMBER-desktop/releases/download/v0.1.3/REMEMBER_0.1.3_x64_en-US.msi) |
-| **Linux** | Universal (`.AppImage`) | 🟢 Beta Disponible (`v0.1.3`) | [Descargar AppImage](https://github.com/Alejandro11R/REMEMBER-desktop/releases/download/v0.1.3/REMEMBER_0.1.3_amd64.AppImage) |
-| **Linux (Debian/Ubuntu)** | Paquete Debian (`.deb`) | 🟢 Beta Disponible (`v0.1.3`) | [Descargar Paquete .deb](https://github.com/Alejandro11R/REMEMBER-desktop/releases/download/v0.1.3/REMEMBER_0.1.3_amd64.deb) |
-| **macOS** | Universal (`.dmg` Apple Silicon & Intel) | 🟡 En Preparación | *Próximamente* |
+| **Windows 10 / 11** | Instalador x64 (`.exe` / `.msi`) | 🟢 Beta Disponible (`v0.1.3`) | [Registrar correo y descargar en isremember.com](https://www.isremember.com#waitlist) |
+| **Linux** | Universal (`.AppImage` / `.deb` / `.rpm`) | 🟢 Beta Disponible (`v0.1.3`) | [Registrar correo y descargar en isremember.com](https://www.isremember.com#waitlist) |
+| **macOS** | Universal (`.dmg` Apple Silicon & Intel) | 🟡 En Preparación | [Unirse a la lista de espera](https://www.isremember.com#waitlist) |
 
-> 🌐 **¿Prefieres probar sin instalar?**  
-> Puedes usar la aplicación completa directamente en tu navegador desde [app.isremember.com](https://app.isremember.com) con guardado local instantáneo.
+> 🌐 **¿Prefieres probar de inmediato sin instalar nada?**  
+> Puedes usar la versión Web completa directamente desde [app.isremember.com](https://app.isremember.com) con guardado local instantáneo y acceso en 1 clic como invitado.
 
 ---
 
