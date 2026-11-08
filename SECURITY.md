@@ -6,8 +6,8 @@ En **REMEMBER**, la seguridad y la privacidad de la información académica de n
 
 | Versión | Estado de Soporte de Seguridad |
 | :--- | :--- |
-| `0.1.3-beta` (Actual) | ✅ Soportada activamente |
-| `< 0.1.3` | ❌ Obsoleta (actualizar a la última versión Beta) |
+| `0.1.4-beta` (Actual) | ✅ Soportada activamente |
+| `< 0.1.4` | ❌ Obsoleta (actualizar a la última versión Beta) |
 
 ---
 
